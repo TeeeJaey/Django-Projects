@@ -11,21 +11,16 @@
     <div class="Users">
         <h1>All Users:-</h1>
         {% if users %}
-        <table>
-            <thead>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Email ID</th>
-            </thead>
-
+        <ol>
             {% for user in users %}
-            <tr>
-                <td>{{ user.fname }}</td>
-                <td>{{ user.lname }}</td>
-                <td>{{ user.email }}</td>
-            </tr>
+            <li>User list : </li>
+            <ul>
+                <li>First Name: {{ user.fname }}</li>
+                <li>Last Name: {{ user.lname }}</li>
+                <li>Email ID: {{ user.email }}</li>
+            </ul>
             {% endfor %}
-        </table>
+        </ol>
 
         {% else %}
         <p>No Users found!</p>
