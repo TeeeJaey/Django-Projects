@@ -18,11 +18,13 @@
 from django.contrib import admin
 from django.conf.urls import url,include
 from django.urls import path
-from MyDjangoApp import views
+from MyDjangoApp import views as mainView
+from MyFormApp import views as fView
 
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('MyDjangoApp/', include('MyDjangoApp.urls')),
+    path('',mainView.index,name='index'),
     path('admin/', admin.site.urls),
-    path('users/',views.users,name='users'),
+    path('MyDjangoApp/', include('MyDjangoApp.urls')),
+    path('users/',mainView.users,name='users'),
+    path('form/',fView.form,name='form'),
 ]

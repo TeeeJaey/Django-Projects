@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from MyDjangoApp import views
+from MyDjangoApp.userForm import UserForm 
 from MyDjangoApp.models import Topic, Webpage, AccessRecord, User
 
 
@@ -15,7 +16,18 @@ def index(request):
 
 def users(request):
 
-    userList = User.objects.order_by('fname')
-    userDict = {'users': userList}
+    myUserForm = UserForm()
 
-    return render(request,'MyDjangoApp/users.html',context=userDict)
+    userList = User.objects.order_by('fname')
+    userDict = {'users': userList, 'userForm':myUserForm}
+
+
+    if(request.method == 'POST'):
+        form = UserForm(request.POST)
+
+        if(form.is_valid()):
+            form.save(commit=True)
+            return users(request)
+        else:
+            print('Invalid user form!')
+    return render(request,'MyDjangoApp/users.html',context=userDict )
