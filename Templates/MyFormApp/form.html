@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+{% extends "index.html" %}
+{% load staticfiles %}
+
+    {% block bodyBlock %}
+        <form method="POST" style="margin:50px" >
+            <h3>Fill out the form</h3>
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="Submit"/>
+        </form>
+    {% endblock %}

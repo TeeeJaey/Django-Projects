@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "index.html" %}
+{% load staticfiles %}
+
+    {% block bodyBlock %}
+        <div style="margin:50px">
+            <h1>Welcome to My Django Project.</h1>
+            <h4>This is a great camping site.</h4>
+            <img src="{% static 'images/myImg.jpg' %}" alt="">
+        </div>
+    {% endblock %}

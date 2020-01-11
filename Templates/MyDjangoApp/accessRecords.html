@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+{% extends "index.html" %}
+
+    {% block bodyBlock %}
+
+        <div class="accRecords" style="margin:50px">
+            <h2>Access records:-</h2>
+            {% if accessRecords %}
+            <table>
+                <thead>
+                    <th>Site Name</th>
+                    <th>Data Accessed</th>
+                </thead>
+
+                {% for acc in accessRecords %}
+                <tr>
+                    <td>{{ acc.name }}</td>
+                    <td>{{ acc.date }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+
+            {% else %}
+            <p>No Access Records found!</p>
+            {% endif %}
+        </div>
+    
+    {% endblock %}

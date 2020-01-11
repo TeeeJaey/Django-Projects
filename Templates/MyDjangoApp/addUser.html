@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+{% extends "index.html" %}
+
+    {% block bodyBlock %}
+        <form method="POST" style="margin:50px" >
+            <h3>Add a User:</h3>
+            {{userForm.as_p}}
+            {% csrf_token %}
+            <input type="submit"  class="btn btn-primary" value="Submit"/>
+        </form>
+    {% endblock %}

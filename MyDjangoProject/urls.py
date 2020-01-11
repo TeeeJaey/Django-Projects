@@ -25,6 +25,5 @@ urlpatterns = [
     path('',mainView.index,name='index'),
     path('admin/', admin.site.urls),
     path('MyDjangoApp/', include('MyDjangoApp.urls')),
-    path('users/',mainView.users,name='users'),
     path('form/',fView.form,name='form'),
 ]

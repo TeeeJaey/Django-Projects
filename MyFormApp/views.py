@@ -5,7 +5,7 @@ from .form import FormName
 
 def index(request):
 
-    return render(request, 'form.html')
+    return render(request, 'MyForm/form.html')
 
 
 def form(request):
@@ -20,5 +20,5 @@ def form(request):
             print("Text: " + myform.cleaned_data['text'])
 
 
-    return render(request, 'form.html' , {'form':myform})
+    return render(request, 'MyFormApp/form.html' , {'form':myform})
 

@@ -15,11 +15,16 @@
         2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from MyDjangoApp import views
+from MyDjangoApp import views as mainView
 from django.conf.urls import url
 from django.urls import path
 
+app_name='MyDjangoApp'
+
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('',mainView.welcome,name='welcome'),
+    path('accessRecords/',mainView.accessRecords,name='accessRecords'),
+    path('users/',mainView.users,name='users'),
+    path('addUser/',mainView.addUser,name='addUser'),
 ]
 
