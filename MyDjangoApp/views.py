@@ -10,7 +10,7 @@ def index(request):
     return render(request,'index.html',context=myDict)
 
 def welcome(request):
-    myDict={}
+    myDict={ 'hdrText':'This is a great resting site.', 'cntTrees':15 }
     return render(request,'MyDjangoApp/welcome.html',context=myDict)
     
 def accessRecords(request):

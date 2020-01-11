@@ -2,11 +2,13 @@
 
 {% extends "index.html" %}
 {% load staticfiles %}
+{% load appFilters %}
 
     {% block bodyBlock %}
         <div style="margin:50px">
             <h1>Welcome to My Django Project.</h1>
-            <h4>This is a great camping site.</h4>
+            <h4>{{ hdrText | replace:'resting,camping' }}</h4>
+            <h4>Number of trees : {{ cntTrees | add:'5' }}</h4>
             <img src="{% static 'images/myImg.jpg' %}" alt="">
         </div>
     {% endblock %}
