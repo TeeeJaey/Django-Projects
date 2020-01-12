@@ -6,7 +6,7 @@ django.setup()
 
 
 import random
-from MyDjangoApp.models import AccessRecord,Webpage,Topic,User
+from MainApp.models import AccessRecord,Webpage,Topic,User
 from faker import Faker
 
 

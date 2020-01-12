@@ -15,17 +15,16 @@
         2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.contrib import admin
-from django.conf.urls import url,include
-from django.urls import path
 from MainApp import views as mainView
-from FormApp import views as fView
-from AuthApp import views as AView
+from django.conf.urls import url
+from django.urls import path
+
+app_name='MainApp'
 
 urlpatterns = [
-    path('',mainView.index,name='index'),
-    path('admin/', admin.site.urls),
-    path('MainApp/', include('MainApp.urls')),
-    path('AuthApp/',include('AuthApp.urls')),
-    path('form/',fView.form,name='form'),
+    path('',mainView.welcome,name='welcome'),
+    path('accessRecords/',mainView.accessRecords,name='accessRecords'),
+    path('users/',mainView.users,name='users'),
+    path('addUser/',mainView.addUser,name='addUser'),
 ]
+

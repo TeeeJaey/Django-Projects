@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+{% extends "index.html" %}
+{% load static %}
+{% load appFilters %}
+
+    {% block bodyBlock %}
+        <div style="margin:50px">
+            <h1>Welcome to My Django Project.</h1>
+            <h4>{{ hdrText | replace:'resting,camping' }}</h4>
+            <h4>Number of trees : {{ cntTrees | add:'5' }}</h4>
+            <img src="{% static 'images/myImg.jpg' %}" alt="">
+        </div>
+    {% endblock %}
