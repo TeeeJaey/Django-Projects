@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'MainApp',
     'FormApp',
     'AuthApp',
+    'ApiApp.apps.ApiappConfig',
 ]
 
 MIDDLEWARE = [

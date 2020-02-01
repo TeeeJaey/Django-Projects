@@ -21,6 +21,10 @@ from django.urls import path
 from MainApp import views as mainView
 from FormApp import views as fView
 from AuthApp import views as AView
+from ApiApp.models import UserResource,AccessRecordResource
+
+userRes = UserResource()
+accessRecRes = AccessRecordResource()
 
 urlpatterns = [
     path('',mainView.index,name='index'),
@@ -28,4 +32,6 @@ urlpatterns = [
     path('MainApp/', include('MainApp.urls')),
     path('AuthApp/',include('AuthApp.urls')),
     path('form/',fView.form,name='form'),
+    path('api/',include(userRes.urls)),
+    path('api/',include(accessRecRes.urls)),
 ]
