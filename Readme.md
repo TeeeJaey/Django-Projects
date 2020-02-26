@@ -10,3 +10,4 @@ To run thi project:
 
 Or follow the DJango.docx word document attached within the repository
 
+More coming soon ...
